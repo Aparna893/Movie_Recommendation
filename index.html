@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Movie Recommendations</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="banner">
+  <video autoplay muted loop class="background-video">
+    <source src="video/banner.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="banner-text">
+    <h1>Welcome to MovieFlix</h1>
+    <p>Explore, rate and review your favorite movies</p>
+  </div>
+</div>
+
+
+  <header>
+    
+    <div class="auth-buttons">
+      <a href="register.html" class="nav-button">📝 Register</a>
+      <a href="login.html" class="nav-button">🔐 Login</a>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="🔍 Search movies...">
+    <select id="genre-filter">
+      <option value="">🎭 All Genres</option>
+      <option value="Action">Action</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+      <option value="Romance">Romance</option>
+    </select>
+    <select id="sort">
+      <option value="">📅 Sort by</option>
+      <option value="year_asc">Year ↑</option>
+      <option value="year_desc">Year ↓</option>
+      <option value="rating_desc">⭐ Top Rated</option>
+    </select>
+    <a href="favorites.html"><button>❤️ View Favorites</button></a>
+  </div>
+
+  <div id="movie-list" class="movie-grid"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

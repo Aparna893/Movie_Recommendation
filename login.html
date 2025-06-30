@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔐 Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="auth-container">
+  <h1>🔐 Login</h1>
+  <form onsubmit="loginUser(event)">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p style="text-align: center;">Don't have an account? <a href="register.html">Register here</a></p>
+
+  <script>
+    function loginUser(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new URLSearchParams(new FormData(form));
+
+      fetch("../php/login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString()
+      })
+      .then(res => res.text())
+      .then(response => {
+        alert(response);
+        if (response.includes("Login successful")) {
+          window.location.href = "index.html";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
